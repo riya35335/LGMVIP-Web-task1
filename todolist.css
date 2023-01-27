@@ -7,18 +7,74 @@
 }
 body{
     height: 100vh;
-    background:rgb(108, 179, 237);
+    background: linear-gradient(-45deg, #5b0808, #144b08, #121f85, #ff0909);
+    background-size: 400% 400%;
+    animation: gradient 7s ease infinite;
+    height: 100vh;
 }
-.container{
-    width: 40%;
-    top: 50%;
-    left: 50%;
-    background: white;
-    border-radius: 10px;
-    min-width: 450px;
-    position: absolute;
-    min-height: 100px;
-    transform: translate(-50%,-50%);
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.wrapper {
+    background: #fff;
+    max-width: 400px;
+    width: 100%;
+    margin: 120px auto;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+.wrapper header {
+    font-size: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #692253;
+}
+
+.wrapper .inputField {
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    height: 45px;
+}
+.inputField input {
+    width: 85%;
+    height: 100%;
+    outline: none;
+    border-radius: 50px;
+    border: 2px solid #7b155c;
+    font-size: 17px;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.inputField input:focus {
+    border-color: #cc08cf64;
+    border-radius: 50px;
+}
+
+.inputField button {
+    width: 50px;
+    height: 100%;
+    border: none;
+    color: #fff;
+    margin-left: 5px;
+    font-size: 21px;
+    outline: none;
+    background: #7b155c;
+    cursor: pointer;
+    border-radius: 3px;
+    /* pointer-events: none; */
+    transition: all 0.3s ease;
 }
 #newtask{
     position: relative;
@@ -36,17 +92,43 @@ body{
     font-size: 15px;
     border: 2px solid #d1d3d4;
 }
+.wrapper .footer {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.footer button {
+    padding: 6px 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 5px;
+    background: #656a76;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.footer button.active {
+    opacity: 1;
+    pointer-events: auto;
+}
 #newtask input:focus{
     outline: none;
-    border-color: blue;
+    border-color: rgb(255, 0, 0);
 }
 #newtask button{
     position: relative;
     float: right;
     font-weight: 500;
     font-size: 16px;
-    background-color: rgb(227, 83, 165);
+    background-color:#0f24c4e3;
     border: none;
     color: white;
     cursor: pointer;
@@ -60,7 +142,7 @@ body{
     border-radius: 10px;
     width: 100%;
     position: relative;
-    background-color:white ;
+    background-color:#0f24c4e3;
     padding: 30px 20px;
     margin-top: 10px;
 }
@@ -83,8 +165,8 @@ body{
     font-weight: 400;
 }
 .task button{
-    background-color: rgb(144, 193, 241);
-    color: skyblue;
+    background-color: rgba(149, 18, 167, 0.858);
+    color: rgb(235, 207, 135);
     border: none;
     cursor: pointer;
     outline: none;
